@@ -18,18 +18,18 @@ double mySqrt(double x);
     Returns:
         double: cosine of x
 ***/
-double myCos(double x) 
-{
-    double result = 1.0;
-    double term = 1.0;
-    int sign = -1;
-    for (int i = 1; i <= 10; i++) {
-        result += sign * term;
-        sign = -sign;
-        term *= x * x / (2 * i - 1) / (2 * i);
+double myCos(double x) {
+    double result = 1.0; // initialize result to first term in series
+    double term = 1.0;   // initialize term to first term in series
+
+    for (int i = 1; i <= 9; ++i) {
+        term *= -1.0 * x * x / (2.0 * i * (2.0 * i - 1.0));
+        result += term;
     }
+
     return result;
 }
+
 
 /***
     Args:
