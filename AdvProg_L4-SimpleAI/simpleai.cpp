@@ -1,5 +1,6 @@
 #include "simpleai.h"
-
+#include <unordered_map>
+#include <algorithm>
 int readMaxGuess()
 {
     int maxGuess;
@@ -27,7 +28,7 @@ int readWordLen()
 vector<string> filterWordsByLen(int wordLen, const vector<string>& vocabulary)
 {
     vector<string> answer;
-    for(string& word : vocabulary){
+    for(const string& word : vocabulary){
         if(word.length() == wordLen){
             answer.push_back(word);
         }
@@ -47,7 +48,7 @@ char nextCharWhenWordIsNotInDictionary(const set<char>& selectedChars)
 {
     char answer = 'a';
     while(selectedChars.count(answer) > 0){
-        answer++
+        answer++;
     }
     //Write your code here
     return answer;
@@ -85,7 +86,7 @@ char findMostFrequentChar(const map<char, int>& occurrences, const set<char>& se
     char answer;
     //Write your code here
     int maxCount = 0;
-    for(const auto& pair : occurences){
+    for(const auto& pair : occurrences){
         char ch = pair.first;
         int count = pair.second;
         if(count > maxCount && selectedChars.count(ch) == 0){
