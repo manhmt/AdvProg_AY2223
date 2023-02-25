@@ -158,7 +158,7 @@ bool isCorrectChar(char ch, const string& mask)
 ***/
 bool isWholeWord(const string& mask)
 {
-    return count(mask.begin(), mask.end(), '_') == 0;
+    return count(mask.begin(), mask.end(), '-') == 0;
 }
 
 /***
