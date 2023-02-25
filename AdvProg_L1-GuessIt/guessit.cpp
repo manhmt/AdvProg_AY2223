@@ -13,7 +13,7 @@ using namespace std;
 ***/
 int generateRandomNumber() {
     // TODO: Return the random number in range 1 to 100
-    srand(time(0))
+    srand(time(0));
     return (rand() % 100) + 1;
 }
 
